@@ -71,3 +71,27 @@
 * ![15](F:\learning-note\gitLearning\images\15.png)
 * 可以看到，我们成功克隆了NLP-interview仓库。
 
+### 分支的创建、合并与删除
+
+* 创建分支，命令：**git branch** new，new是分支名称；切换到新建的分支，命令：**git checkout** new
+* 可以通过一条命令代替上述两条命令：**git checkout -b** new，创建并切换到new分支。
+* ![16](F:\learning-note\gitLearning\images\16.png)
+* 通过命令 **git branch** 可以查看当前所有分支：
+* ![17](F:\learning-note\gitLearning\images\17.png)
+* 现在切换到了新的分支new，对文件hei.md进行修改，然后通过命令 **git add** 和 **git commit** 提交，再切换到主分支master，查看hei.md，发现其中的内容并没有修改，这是因为我们再分支new上进行了提交，并没有再master上提交，现在，将new分支合并到master上，命令：**git merge** new
+* ![18](F:\learning-note\gitLearning\images\18.png)
+* 这时候我们在查看hei.md，可以看到内容已经修改。
+* 合并完成后，删除new分支，命令：**git branch -d** new
+* ![19](F:\learning-note\gitLearning\images\19.png)
+
+### 解决分支合并中的冲突
+
+* 首先，新建一个新的分支newbra，然后修改hei.md文件内容，再进行git add和git commit操作；切换到master分支上，对hei.md文件进行修改，再进行git add和git commit操作；将分支进行合并，结果如下图所示：
+* ![20](F:\learning-note\gitLearning\images\20.png)
+* 可以发现，合并分支时出现了冲突，通过git status可以查看当前状态：
+* ![21](F:\learning-note\gitLearning\images\21.png)
+* 这种情况必须手动解决冲突。我们可以对hei.md文件再一次进行修改，然后执行git add和git commit命令，这样就解决了冲突，结果如下：
+* ![22](F:\learning-note\gitLearning\images\22.png)
+* 可以看到冲突已解决。通过命令 git log --graph 可以看到分支合并图。
+* ![23](F:\learning-note\gitLearning\images\23.png)
+
