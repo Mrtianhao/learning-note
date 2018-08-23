@@ -57,9 +57,16 @@
 
 ### 远程仓库
 
-+ 将Github作为远程仓库，与本地Git仓库进行连接。Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以需要创建SSH Key，命令：ssh-keygen -t rsa -C "your email"，然后一路回车，使用默认值即可。
++ 将Github作为远程仓库，与本地Git仓库进行连接。Git仓库和GitHub仓库之间的传输是通过SSh加密的，所以需要创建SSh Key，命令：ssh-keygen -t rsa -C "your email"，然后一路回车，使用默认值即可。
 + ![13](C:\Users\Mr.hao\Desktop\images\13.png)
 + 登录github，打开setting，找到SSh Keys，点击 New SSh key，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容，这样就添加好了SSh。
 + 在github中创建新的仓库，如：learning-note，此仓库是空的。
-+ 现在，把本地的learning-note仓库与github上的learning-note关联起来，命令：**git remote add origin https://github.com/Mrtianhao/learning-note.git**
++ 现在，把本地的learning-note仓库与github上的learning-note关联起来，命令：**git remote add origin https://github.com/Mrtianhao/learning-note.git**；再将本地库的所有内容推送到远程库上，命令：**git push -u origin master**
++ ![14](C:\Users\Mr.hao\Desktop\images\14.png)
++ 注：上面的Mrtianhao换成你的github账户名。
 
+### 克隆远程库
+
+* 我们要克隆远程库，比如这里克隆我的github账户下的仓库NLP-interview，命令： **git clone git@github.com:Mrtianhao/NLP-interview.git**，这里Mrtianhao换成你的github账户。
+* ![15](C:\Users\Mr.hao\Desktop\images\15.png)
+* 可以看到，我们成功克隆了NLP-interview仓库。
