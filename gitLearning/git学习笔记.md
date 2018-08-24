@@ -38,7 +38,7 @@
 
 + 举个例子：对 test.md 添加一行，执行 **git add test.md** 命令，再对 test.md 添加一行，执行 **git commit** 命令，结果如下：
 
-+ ![10](https://github.com/Mrtianhao/learning-note/blob/master/gitLearning/images/0.png)
++ ![10](https://github.com/Mrtianhao/learning-note/blob/master/gitLearning/images/10.png)
 
 + 如上图所示，执行命令 **git status** 后发现第二次的修改并没有提交，这是因为，第一次修改后执行命令 **git add**，将第一次修改添加到了暂存区，接着执行了 **git commit** 提交到了master，但是第二次修改并没有添加到暂存区，所以没有提交到master。因此，需要将第二次修改添加到暂存区，即执行命令 **git add**，再执行**git commit**
 
