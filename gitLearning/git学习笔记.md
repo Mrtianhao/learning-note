@@ -94,4 +94,14 @@
 * ![22](F:\learning-note\gitLearning\images\22.png)
 * 可以看到冲突已解决。通过命令 git log --graph 可以看到分支合并图。
 * ![23](F:\learning-note\gitLearning\images\23.png)
+* 合并分支时，git会用Fast Forword模式，但这种模式下，删除分支后，会丢掉分支信息。因此，在合并分支时，可以使用参数 --no-ff，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+* ![24](F:\learning-note\gitLearning\images\24.png)
+* 删除一个没有被合并国的分支，可以通过命令 **git branch -D <name>** 来实现。
 
+### 多人协作
+
+* 首先，用 **git push origin <branch-name>** 推送自己的修改。
+* 如果推送失败，是因为远程分支比你的本地分支更新，需要 **git pull** 合并。
+* 如果合并有冲突，则手动解决冲突，并在本地提交。
+* 没有冲突或者解决冲突后，再用 **git push origin <branch-name>** 就能推送成功。
+* 注：如果 **git pull** 提示 no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令 **git branch --set-upstream-to <branch-name> origin/<branch-name>**。
